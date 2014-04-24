@@ -57,13 +57,13 @@ $(document).on 'pjax:end', (event, xhr, options) ->
     requestId = xhr.getResponseHeader 'X-Request-Id'
 
   if peekEnabled()
-    $(this).trigger 'peek:update'
+    $(document).trigger 'peek:update'
 
 # Also listen to turbolinks page change event
 $(document).on 'page:change', ->
   if peekEnabled()
-    $(this).trigger 'peek:update'
+    $(document).trigger 'peek:update'
 
 $ ->
   if peekEnabled()
-    $(this).trigger 'peek:update'
+    $(document).trigger 'peek:update'
